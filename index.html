@@ -7,31 +7,48 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script src="functions.js" defer></script>
+    
     <div class="sidebar">
         <div class="welcome">Welcome to Giedi Prime Library!</div>
-        <div class="add-new-book">Add a new book</div>
+        <div id="add-book-btn" class="add-new-book">Add a new book</div>
+        <form id="add-book-form" action="/example.com" method="post">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author">
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year"> 
+            <input id="submit-book" type="submit">       
+         </form>
     </div>
     <div id="library">
-        <div class="book-card">
+        <!-- <div class="book-card"> -->
             <!-- <div>Title:</div> -->
-            <div class="title">The Hobbit</div>
+            <!-- <div class="title">The Hobbit</div> -->
             <!-- <br> -->
             <!-- <div>Author:</div> -->
-            <div class="author">JRR Tolkien</div>
+            <!-- <div class="author">JRR Tolkien</div> -->
             <!-- <br> -->
             <!-- <div>Year:</div> -->
-            <div class="year">1971</div>
+            <!-- <div class="year">1971</div> -->
             <!-- <br> -->
             <!-- <div>Have I read it? </div> -->
-            <div class="read">Havent read it yet</div>
+            <!-- <div class="read">Havent read it yet</div> -->
             <!-- <br> -->
-            <div class="actions">
-                <div class="read-button">Set read</div>
-                <div class="delete-button">Delete</div>
-            </div>
+            <!-- <div class="actions"> -->
+                <!-- <div class="read-button">Set read</div> -->
+                <!-- <div class="delete-button">Delete</div> -->
+            <!-- </div> -->
             
-        </div>
+        <!-- </div> -->
+         
     </div>
+    <script src="functions.js" defer></script>
 </body>
 </html>
+
+<!-- <div class="book-card" data-user-id="123">
+    <div class="actions">
+        <div class="read-button"></div>
+    </div>
+</div> -->

@@ -28,8 +28,12 @@ body{
 
 }
 #library{
+    display: grid;
+    grid-template-columns: repeat(autofit, clamp(200px,300px, 400px));
+    gap: 8px;
     padding: 24px;
     grid-column: 2/3;
+
     
 }
 
@@ -65,4 +69,5 @@ body{
     border-radius: 8px;
     padding: 3px;
     width: min-content;
+    box-shadow: 2px 2px 2px rgb(90, 90, 90);
 }
