@@ -115,30 +115,38 @@ function removeBook(){
     // const bookId = document.querySelector(`[data-user=]`)
 }
 
-function addBookToLibrary(event,title, author,year,read=false, ){
-    if (arguments[0]!='') {
-        title = title;
-        author = author;
-        year = year;
-        read=read
-    }
-    else{
+function addBookToLibrary(event){
+    // ,title, author,year,read=false
+    // if (library.length==0) {
+    //     title = title;
+    //     author = author;
+    //     year = year;
+    //     read=read
+    // }
+    // else{
         const newBook = document.getElementById('add-book-form')
-        title = newBook.children[0].textContent.value;
-        author = newBook.children[1].textContent.value;
-        year = newBook.children[3].textContent.value;
-    }
+        title = newBook.children[1].value;
+        author = newBook.children[3].value;
+        year = newBook.children[5].value;
+        read = false;
+    // }
     // const addBook = document.getElementById('add-book-btn')
     event.preventDefault()
     let book = new Book(title, author, year, read)
     
     library.push(book)
-    return displayBook()
+    book.displayBook()
+    return
 }
 
-// addBookToLibrary('The Hobbit 1','Tolkien', 1971, false)
+// if (library.length==0){
+// addBookToLibrary(event,'The Hobbit 1','Tolkien', 1971, false)
 // addBookToLibrary('The Hobbit 2','Tolkien', 1972, false)
 // addBookToLibrary('The Hobbit 3','Tolkien', 1973, false)
+// displayLibrary()
+// }
+
+
 
 
 const addBook = document.getElementById('submit-book')
@@ -148,6 +156,7 @@ addBook.addEventListener('click', addBookToLibrary, false)
 function displayLibrary(library){
    library.forEach(element => {element.displayBook()});
 }
+
 
 
 
