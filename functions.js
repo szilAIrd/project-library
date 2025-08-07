@@ -1,18 +1,18 @@
 const body = document.getElementsByName('body')
 
-class Book {
-    //  public fields
-    title = title;
-    author = author;
-    year = year;
-    read = read;
-    id = crypto.randomUUID();
+// class Book {
+//     //  public fields
+//     title = title;
+//     author = author;
+//     year = year;
+//     read = read;
+//     id = crypto.randomUUID();
 
-    // methods
-    displayBook(){}
-    addBookToLibrary(){}
-    removeBook(){}
-}
+//     // methods
+//     displayBook(){}
+//     addBookToLibrary(){}
+//     removeBook(){}
+// }
 
 function Book(title, author, year, read) {
     if (!new.target) {
@@ -142,9 +142,11 @@ function addBookToLibrary(event){
         author = newBook.children[3].value;
         year = newBook.children[5].value;
         read = false;
+
+
     // }
     // const addBook = document.getElementById('add-book-btn')
-    event.preventDefault()
+    // event.preventDefault()
     let book = new Book(title, author, year, read)
     
     library.push(book)
@@ -159,16 +161,49 @@ function addBookToLibrary(event){
 // displayLibrary()
 // }
 
+const submitBookBtn = document.getElementById('submit-book')
+submitBookBtn.addEventListener('click', submitBook, false)
+let titleInput = document.getElementById('title')
+// titleInput.willValidate = true
 
-
-
-const addBook = document.getElementById('submit-book')
-addBook.addEventListener('click', addBookToLibrary, false)
+let authorInput = document.getElementById('author')
+// authorInput.willValidate = true
+let yearInput = document.getElementById('year')
+// yearInput.willValidate = true
 
 
 function displayLibrary(library){
    library.forEach(element => {element.displayBook()});
 }
+
+// Add form validation
+// 1. validate title, author, year forms: minlength 1
+// 2. When clicked submit if conditions are not fulfilled validity check should set false
+
+function submitBook(event){
+        // submitBookBtn.
+        event.preventDefault()
+         if (titleInput.validity.valueMissing){
+            titleInput.setCustomValidity("Fill out all the fields!")
+            titleInput.reportValidity()
+            return
+        }
+        else if(authorInput.validity.valueMissing) {
+            authorInput.setCustomValidity("Fill out all the fields!")
+            authorInput.reportValidity()
+            return
+        }
+        else if (yearInput.validity.valueMissing){
+            yearInput.setCustomValidity("Fill out all the fields!")
+            yearInput.reportValidity()
+            return
+        }
+        else {
+            addBookToLibrary(event)
+            
+        }
+    }
+
 
 
 
