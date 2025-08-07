@@ -1,5 +1,18 @@
 const body = document.getElementsByName('body')
 
+class Book {
+    //  public fields
+    title = title;
+    author = author;
+    year = year;
+    read = read;
+    id = crypto.randomUUID();
+
+    // methods
+    displayBook(){}
+    addBookToLibrary(){}
+    removeBook(){}
+}
 
 function Book(title, author, year, read) {
     if (!new.target) {
